@@ -1,25 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-interface CardData {
-  duration: number;
-  email: string;
-  firstName: string;
-  imageUrl: string;
-  lastName: string;
-  likes: number;
-  thumbnailUrl: string;
-}
+import { TileType } from "../components/Tile/Tile.types";
 
 const useFetchData = (pageNumber: number) => {
-  const [tilePerPage, _] = useState(50);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [cardData, setCardData] = useState<CardData[] | []>([]);
+  const [tiles, setTiles] = useState<TileType[] | []>([]);
   const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
     setLoading(true);
+    setError(false);
 
     axios
       .get(`${process.env.REACT_APP_API_URL}`, {
@@ -27,10 +18,10 @@ const useFetchData = (pageNumber: number) => {
         headers: {
           Authorization: `Basic ${process.env.REACT_APP_TOKEN}`,
         },
-        params: { page: pageNumber, perPage: tilePerPage },
+        params: { page: pageNumber },
       })
       .then((res) => {
-        setCardData((prevData) => {
+        setTiles((prevData) => {
           return [...prevData, ...res.data.rows];
         });
         setHasMore(res.data.rows.length > 0);
@@ -42,7 +33,7 @@ const useFetchData = (pageNumber: number) => {
       });
   }, [pageNumber]);
 
-  return { loading, error, cardData, hasMore };
+  return { loading, error, tiles, hasMore };
 };
 
 export default useFetchData;

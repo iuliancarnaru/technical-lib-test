@@ -1,10 +1,10 @@
-import CardTileList from "../CardTileList";
+import TileList from "../TileList";
 
 const Library = () => {
   return (
     <>
-      <h1>Header</h1>
-      <CardTileList />
+      <p>HEADER</p>
+      <TileList />
     </>
   );
 };
