@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback, ReactNode } from "react";
 import useFetchData from "../../utils/useFetchData";
 import Tile from "../Tile";
+import { TileListContainer } from "./TileList.style";
 
 const TileList = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -23,7 +24,7 @@ const TileList = () => {
   );
 
   return (
-    <div>
+    <TileListContainer>
       {loading && <div>Loading</div>}
       {error && <div>Ups something went wrong, please try again</div>}
       {tiles.map((tileDetails, idx) => {
@@ -33,7 +34,7 @@ const TileList = () => {
           return <Tile ref={null} {...tileDetails} />;
         }
       })}
-    </div>
+    </TileListContainer>
   );
 };
 

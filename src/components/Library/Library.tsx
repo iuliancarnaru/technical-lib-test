@@ -1,11 +1,17 @@
+import {
+  HeaderContainer,
+  HeaderTitle,
+} from "../LibraryHeader/LibraryHeader.style";
 import TileList from "../TileList";
 
 const Library = () => {
   return (
-    <>
-      <p>HEADER</p>
+    <section>
+      <HeaderContainer>
+        <HeaderTitle>Library</HeaderTitle>
+      </HeaderContainer>
       <TileList />
-    </>
+    </section>
   );
 };
 
