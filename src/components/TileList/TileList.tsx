@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, ReactNode } from "react";
+import { useState, useRef, useCallback } from "react";
 import useFetchData from "../../utils/useFetchData";
 import Tile from "../Tile";
 import { TileListContainer } from "./TileList.style";
@@ -24,17 +24,21 @@ const TileList = () => {
   );
 
   return (
-    <TileListContainer>
+    <>
       {loading && <div>Loading</div>}
       {error && <div>Ups something went wrong, please try again</div>}
-      {tiles.map((tileDetails, idx) => {
-        if (tiles.length === idx + 1) {
-          return <Tile ref={lastTileCard} {...tileDetails} />;
-        } else {
-          return <Tile ref={null} {...tileDetails} />;
-        }
-      })}
-    </TileListContainer>
+      <TileListContainer>
+        {tiles.map((tile, idx) => {
+          return (
+            <Tile
+              key={`${tile.lastName}-${idx}`}
+              ref={idx === tiles.length - 1 ? lastTileCard : null}
+              tile={tile}
+            />
+          );
+        })}
+      </TileListContainer>
+    </>
   );
 };
 
