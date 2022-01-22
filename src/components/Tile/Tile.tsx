@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, useRef, useEffect } from "react";
 import { TileType } from "./Tile.types";
 import { displayTime } from "../../utils/displayTime";
 import {
@@ -71,11 +71,13 @@ const Tile = forwardRef<HTMLDivElement | null, TileProps>(({ tile }, ref) => {
         </Modal>
       ) : null}
       <TileContainer ref={ref} onClick={handleModalVisibility}>
-        <TileImage
-          imageUrl={thumbnailUrl}
-          role="img"
-          aria-label={`[${fullName}]`}
-        />
+        {thumbnailUrl && (
+          <TileImage
+            imageUrl={thumbnailUrl}
+            role="img"
+            aria-label={`[${fullName}]`}
+          />
+        )}
         <TileTime>{displayTime(duration)}</TileTime>
         <TileDetails>
           <p>{fullName}</p>

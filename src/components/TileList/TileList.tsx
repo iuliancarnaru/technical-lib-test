@@ -2,6 +2,8 @@ import { useState, useRef, useCallback } from "react";
 import useFetchData from "../../utils/useFetchData";
 import Tile from "../Tile";
 import { TileListContainer } from "./TileList.style";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const TileList = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -25,7 +27,14 @@ const TileList = () => {
 
   return (
     <>
-      {loading && <div>Loading</div>}
+      {loading && (
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={loading}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      )}
       {error && <div>Ups something went wrong, please try again</div>}
       <TileListContainer>
         {tiles.map((tile, idx) => {

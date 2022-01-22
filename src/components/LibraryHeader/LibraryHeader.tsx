@@ -1,5 +1,7 @@
+import { HeaderTitle } from "./LibraryHeader.style";
+
 const LibraryHeader = () => {
-  return <h1>Library</h1>;
+  return <HeaderTitle>Library</HeaderTitle>;
 };
 
 export default LibraryHeader;

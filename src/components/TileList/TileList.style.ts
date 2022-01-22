@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TileListContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2.4rem 1.6rem;
+  margin: 0 24px;
 `;

@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     // sets a base font of 10px (useful when using rem)
-    font-size: 62.5%; 
+    /* font-size: 62.5%;  */
   }
 
   body {

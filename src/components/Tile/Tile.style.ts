@@ -6,16 +6,29 @@ interface TileProps {
 
 export const TileContainer = styled.div`
   position: relative;
+  margin-bottom: 24px;
+  /* margin-right: 16px; */
+
+  @media only screen and (max-width: 480px) {
+    width: 90vw;
+  }
 `;
 
 export const TileImage = styled.span<TileProps>`
   background-image: url(${({ imageUrl }) => imageUrl});
   background-position: center;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   display: inline-block;
-  margin-bottom: 0.8rem;
-  width: 20rem;
-  height: 20rem;
+  margin-bottom: 8px;
+  width: 200px;
+  height: 200px;
+  background-color: #e2e2e2;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media only screen and (max-width: 480px) {
+    width:100%;
+  }
 `;
 
 export const TileTime = styled.span`
@@ -25,28 +38,28 @@ export const TileTime = styled.span`
   display: inline-flex;
   align-items: center;
   position: absolute;
-  top: 0.8rem;
-  left: 0.8rem;
-  font-size: 1.7rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
+  top: 8px;
+  left: 8px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius:5px;
   z-index: 2;
 `;
 
 export const TileDetails = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 1.6rem;
+  font-size: 16px;
 `;
 
 export const ModalWrapper = styled.div`
-  width: 100rem;
-  height: 60rem;
+  width: 1000px;
+  height:600px;
   background-color: #fff;
   position: relative;
   display: flex;
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1120px) {
     flex-direction: column;
     width: 90vw;
     height: 80vh;
@@ -56,13 +69,13 @@ export const ModalWrapper = styled.div`
 
 export const ModalCloseButton = styled.button`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
+  top: 12px;
+  right: 12px;
+  font-size: 16px;
   border: none;
   background: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 4px;
   background-color: #fff;
   border-radius: 50%;
 
@@ -71,42 +84,42 @@ export const ModalCloseButton = styled.button`
 export const ModalImage = styled.img`
   object-fit: cover;
   object-position: center;
-  width: 40rem;
+  width: 400px;
   height:100%;
   background-color: #e2e2e2;
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1120px) {
     width: 100%;
-    height: 20rem;
+    height: 200px;
   }
 `
 export const ModalContent = styled.div`
   display: flex;
-  flex: 0 1 60rem;
+  flex: 0 1 600px;
   flex-direction: column;
-  padding: 6rem;
+  padding: 64px;
   justify-content: space-evenly;
 
   @media only screen and (max-width: 468px) {
-    padding: 2.5rem;
+    padding: 24px;
   }
 `
 export const FullName = styled.h2`
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
+  font-size: 24px;
+  margin-bottom: 20px;
 `
 export const About = styled.p`
-  font-size: 1.8rem;
+  font-size: 18px;
   line-height: 1.4;
 `
 
 export const ContactDetails = styled.p`
-  font-size: 1.6rem;
+  font-size: 16px;
   color: #777;
 `
 
 export const EmailEmoji = styled.span`
   display: inline-block;
-  font-size: 3rem;
-  margin-right: 1rem;
+  font-size: 32px;
+  margin-right: 10px;
 `

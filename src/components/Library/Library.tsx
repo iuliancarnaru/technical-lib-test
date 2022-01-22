@@ -3,15 +3,16 @@ import {
   HeaderTitle,
 } from "../LibraryHeader/LibraryHeader.style";
 import TileList from "../TileList";
+import { LibrarySection } from "./Library.style";
 
 const Library = () => {
   return (
-    <section>
+    <LibrarySection>
       <HeaderContainer>
         <HeaderTitle>Library</HeaderTitle>
       </HeaderContainer>
       <TileList />
-    </section>
+    </LibrarySection>
   );
 };
 
