@@ -1,4 +1,4 @@
-import { forwardRef, useState, useRef, useEffect } from "react";
+import { forwardRef, useState } from "react";
 import { TileType } from "./Tile.types";
 import { displayTime } from "../../utils/displayTime";
 import {
@@ -36,14 +36,14 @@ const Tile = forwardRef<HTMLDivElement | null, TileProps>(({ tile }, ref) => {
 
   const fullName = `${firstName} ${lastName}`;
 
-  const handleModalVisibility = () => {
+  const handleModalVisibility = (): any => {
     setShowModal((prevState) => !prevState);
   };
 
   return (
     <>
       {showModal ? (
-        <Modal>
+        <Modal data-testid="modal">
           <ModalWrapper>
             <ModalCloseButton onClick={handleModalVisibility}>
               ❌

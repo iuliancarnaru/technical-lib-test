@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import Tile from "./Tile";
 
 const mockProps = {
@@ -25,5 +25,14 @@ describe("Tile component", () => {
     expect(getByText("0:28")).toBeInTheDocument();
     expect(getByText("86 ❤️")).toBeInTheDocument();
     expect(getByText("Dusty Thompson")).toBeInTheDocument();
+  });
+
+  it("should show Modal component when you click on the tile", async () => {
+    const { getByRole, getByText } = render(<Tile {...mockProps} />);
+    const handleModalVisibility = jest.fn();
+
+    const tile = getByRole("img");
+    fireEvent.click(tile);
+    await waitFor(() => expect(handleModalVisibility).toHaveBeenCalledTimes(1));
   });
 });

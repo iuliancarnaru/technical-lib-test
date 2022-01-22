@@ -4,13 +4,13 @@ import { TileType } from "../components/Tile/Tile.types";
 
 const useFetchData = (pageNumber: number) => {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [tiles, setTiles] = useState<TileType[] | []>([]);
   const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    setError(false);
+    setError(null);
     let isMounted = true;
 
     axios
@@ -31,8 +31,8 @@ const useFetchData = (pageNumber: number) => {
         }
       })
       .catch((err) => {
-        setError(true);
-        console.error(err.message);
+        setError(err.message);
+        setLoading(false);
       });
 
     return () => {

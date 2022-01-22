@@ -1,3 +1,4 @@
+import ErrorBoundary from "../../utils/ErrorBoundary";
 import {
   HeaderContainer,
   HeaderTitle,
@@ -11,7 +12,9 @@ const Library = () => {
       <HeaderContainer>
         <HeaderTitle>Library</HeaderTitle>
       </HeaderContainer>
-      <TileList />
+      <ErrorBoundary>
+        <TileList />
+      </ErrorBoundary>
     </LibrarySection>
   );
 };

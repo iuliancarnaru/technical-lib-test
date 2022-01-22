@@ -24,8 +24,8 @@ describe("TileList component", () => {
       hasMore: true,
     });
 
-    const { getByText } = render(<TileList />);
-    expect(getByText("Loading...")).toBeInTheDocument();
+    const { getByTestId } = render(<TileList />);
+    expect(getByTestId("loading-progress")).toBeInTheDocument();
   });
 
   it("displays returned tiles on successful fetch'", async () => {
