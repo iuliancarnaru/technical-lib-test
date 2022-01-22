@@ -28,15 +28,16 @@ const TileList = () => {
   return (
     <>
       {loading && (
-        <Backdrop
-          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open={loading}
-        >
-          <CircularProgress color="inherit" />
-        </Backdrop>
+        // <Backdrop
+        //   sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        //   open={loading}
+        // >
+        //   <CircularProgress color="inherit" />
+        // </Backdrop>
+        <div>Loading...</div>
       )}
       {error && <div>Ups something went wrong, please try again</div>}
-      <TileListContainer>
+      <TileListContainer role="rowgroup">
         {tiles.map((tile, idx) => {
           return (
             <Tile

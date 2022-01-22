@@ -11,6 +11,7 @@ const useFetchData = (pageNumber: number) => {
   useEffect(() => {
     setLoading(true);
     setError(false);
+    let isMounted = true;
 
     axios
       .get(`${process.env.REACT_APP_API_URL}`, {
@@ -21,16 +22,22 @@ const useFetchData = (pageNumber: number) => {
         params: { page: pageNumber },
       })
       .then((res) => {
-        setTiles((prevData) => {
-          return [...prevData, ...res.data.rows];
-        });
-        setHasMore(res.data.rows.length > 0);
-        setLoading(false);
+        if (isMounted) {
+          setTiles((prevData) => {
+            return [...prevData, ...res.data.rows];
+          });
+          setHasMore(res.data.rows.length > 0);
+          setLoading(false);
+        }
       })
       .catch((err) => {
         setError(true);
         console.error(err.message);
       });
+
+    return () => {
+      isMounted = false;
+    };
   }, [pageNumber]);
 
   return { loading, error, tiles, hasMore };
