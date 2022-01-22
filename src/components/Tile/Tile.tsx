@@ -2,7 +2,12 @@ import { forwardRef, useState } from "react";
 import { TileType } from "./Tile.types";
 import { displayTime } from "../../utils/displayTime";
 import {
+  About,
+  ContactDetails,
+  EmailEmoji,
+  FullName,
   ModalCloseButton,
+  ModalContent,
   ModalImage,
   ModalWrapper,
   TileContainer,
@@ -43,8 +48,26 @@ const Tile = forwardRef<HTMLDivElement | null, TileProps>(({ tile }, ref) => {
             <ModalCloseButton onClick={handleModalVisibility}>
               ❌
             </ModalCloseButton>
-
-            <ModalImage src={imageUrl} />
+            <ModalImage src={imageUrl} alt={fullName} />
+            <ModalContent>
+              <FullName>{fullName}</FullName>
+              <About>
+                {fullName} was born on March 28, 1986, at Lenox Hill Hospital in
+                Manhattan, New York City, to an upper middle class Catholic
+                family. Both of her parents have Italian ancestry, and she also
+                has more distant French-Canadian roots. Her parents are Cynthia
+                Louise (née Bissett), a philanthropist and business executive,
+                and Internet entrepreneur Joseph Germanotta, and she has a
+                younger sister named Natali. Brought up on the Upper West Side
+                of Manhattan, Gaga said in an interview that her parents came
+                from lower-class families and worked hard for everything.
+              </About>
+              <ContactDetails>
+                {" "}
+                <EmailEmoji>📨</EmailEmoji>
+                {email.toLowerCase()}
+              </ContactDetails>
+            </ModalContent>
           </ModalWrapper>
         </Modal>
       ) : null}

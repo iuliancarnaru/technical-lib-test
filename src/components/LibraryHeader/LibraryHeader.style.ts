@@ -8,4 +8,5 @@ export const HeaderContainer = styled.div`
 export const HeaderTitle = styled.h1`
   font-size: 3.2rem;
   padding: 2.4rem 0;
+  margin-left: 1.7rem;
 `;

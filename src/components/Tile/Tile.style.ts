@@ -40,10 +40,11 @@ export const TileDetails = styled.div`
 `;
 
 export const ModalWrapper = styled.div`
-  width: 80rem;
+  width: 100rem;
   height: 60rem;
   background-color: #fff;
   position: relative;
+  display: flex;
 `
 
 export const ModalCloseButton = styled.button`
@@ -61,5 +62,31 @@ export const ModalImage = styled.img`
   object-position: center;
   width: 40rem;
   height:100%;
-  background-color: #e2e2e2
+  background-color: #e2e2e2;
+`
+export const ModalContent = styled.div`
+  display: flex;
+  flex: 0 1 60rem;
+  flex-direction: column;
+  padding: 6rem;
+  justify-content: space-evenly;
+`
+export const FullName = styled.h2`
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+`
+export const About = styled.p`
+  font-size: 1.8rem;
+  line-height: 1.4;
+`
+
+export const ContactDetails = styled.p`
+  font-size: 1.6rem;
+  color: #777;
+`
+
+export const EmailEmoji = styled.span`
+  display: inline-block;
+  font-size: 3rem;
+  margin-right: 1rem;
 `
