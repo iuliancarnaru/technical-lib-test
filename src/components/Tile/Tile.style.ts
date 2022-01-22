@@ -11,11 +11,11 @@ export const TileContainer = styled.div`
 export const TileImage = styled.span<TileProps>`
   background-image: url(${({ imageUrl }) => imageUrl});
   background-position: center;
-  width: 20rem;
-  height: 20rem;
   border-radius: 0.5rem;
   display: inline-block;
   margin-bottom: 0.8rem;
+  width: 20rem;
+  height: 20rem;
 `;
 
 export const TileTime = styled.span`
@@ -45,17 +45,28 @@ export const ModalWrapper = styled.div`
   background-color: #fff;
   position: relative;
   display: flex;
+
+  @media only screen and (max-width: 1024px) {
+    flex-direction: column;
+    width: 90vw;
+    height: 80vh;
+    overflow: scroll;
+  }
 `
 
 export const ModalCloseButton = styled.button`
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   background: none;
   cursor: pointer;
   padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+
+
 `
 export const ModalImage = styled.img`
   object-fit: cover;
@@ -63,6 +74,11 @@ export const ModalImage = styled.img`
   width: 40rem;
   height:100%;
   background-color: #e2e2e2;
+
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+    height: 20rem;
+  }
 `
 export const ModalContent = styled.div`
   display: flex;
@@ -70,6 +86,10 @@ export const ModalContent = styled.div`
   flex-direction: column;
   padding: 6rem;
   justify-content: space-evenly;
+
+  @media only screen and (max-width: 468px) {
+    padding: 2.5rem;
+  }
 `
 export const FullName = styled.h2`
   font-size: 2.4rem;

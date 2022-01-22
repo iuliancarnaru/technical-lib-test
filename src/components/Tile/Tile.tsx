@@ -63,7 +63,6 @@ const Tile = forwardRef<HTMLDivElement | null, TileProps>(({ tile }, ref) => {
                 from lower-class families and worked hard for everything.
               </About>
               <ContactDetails>
-                {" "}
                 <EmailEmoji>📨</EmailEmoji>
                 {email.toLowerCase()}
               </ContactDetails>
