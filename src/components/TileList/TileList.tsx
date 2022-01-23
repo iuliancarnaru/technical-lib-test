@@ -1,11 +1,13 @@
-import { useState, useRef, useCallback } from "react";
-import useFetchData from "../../utils/useFetchData";
-import Tile from "../Tile";
-import { TileListContainer } from "./TileList.style";
-import Backdrop from "@mui/material/Backdrop";
-import CircularProgress from "@mui/material/CircularProgress";
+import React, { useState, useRef, useCallback, ReactElement } from 'react';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import { TileListContainer } from './TileList.style';
+import Tile from '../Tile';
+import useFetchData from '../../utils/useFetchData';
 
-const TileList = () => {
+function TileList(): ReactElement {
   const [pageNumber, setPageNumber] = useState(1);
   const { loading, error, tiles, hasMore } = useFetchData(pageNumber);
 
@@ -25,22 +27,27 @@ const TileList = () => {
     [loading, hasMore]
   );
 
-  if (error) throw new Error("Fetch data error...");
-
   return (
     <>
       {loading && (
         <Backdrop
-          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
           open={loading}
         >
           <CircularProgress color="inherit" data-testid="loading-progress" />
         </Backdrop>
       )}
+      {error && (
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          😟 Ups something went wrong! <strong>Please try again 🔁</strong>
+        </Alert>
+      )}
       <TileListContainer role="rowgroup">
         {tiles.map((tile, idx) => {
           return (
             <Tile
+              // eslint-disable-next-line react/no-array-index-key
               key={`${tile.lastName}-${idx}`}
               ref={idx === tiles.length - 1 ? lastTileCard : null}
               tile={tile}
@@ -50,6 +57,6 @@ const TileList = () => {
       </TileListContainer>
     </>
   );
-};
+}
 
 export default TileList;

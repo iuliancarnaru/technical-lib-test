@@ -1,7 +1,8 @@
-import { HeaderTitle } from "./LibraryHeader.style";
+import React, { ReactElement } from 'react';
+import { HeaderTitle } from './LibraryHeader.style';
 
-const LibraryHeader = () => {
+function LibraryHeader(): ReactElement {
   return <HeaderTitle>Library</HeaderTitle>;
-};
+}
 
 export default LibraryHeader;

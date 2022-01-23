@@ -1,12 +1,13 @@
-import ErrorBoundary from "../../utils/ErrorBoundary";
+import React, { ReactElement } from 'react';
+import ErrorBoundary from '../../utils/ErrorBoundary';
 import {
   HeaderContainer,
   HeaderTitle,
-} from "../LibraryHeader/LibraryHeader.style";
-import TileList from "../TileList";
-import { LibrarySection } from "./Library.style";
+} from '../LibraryHeader/LibraryHeader.style';
+import TileList from '../TileList';
+import { LibrarySection } from './Library.style';
 
-const Library = () => {
+function Library(): ReactElement {
   return (
     <LibrarySection>
       <HeaderContainer>
@@ -17,6 +18,6 @@ const Library = () => {
       </ErrorBoundary>
     </LibrarySection>
   );
-};
+}
 
 export default Library;

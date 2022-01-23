@@ -1,8 +1,15 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { TileType } from "../components/Tile/Tile.types";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { TileType } from '../components/Tile/Tile.types';
 
-const useFetchData = (pageNumber: number) => {
+const useFetchData = (
+  pageNumber: number
+): {
+  loading: boolean;
+  error: string | null;
+  tiles: [] | TileType[];
+  hasMore: boolean;
+} => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [tiles, setTiles] = useState<TileType[] | []>([]);
@@ -15,7 +22,7 @@ const useFetchData = (pageNumber: number) => {
 
     axios
       .get(`${process.env.REACT_APP_API_URL}`, {
-        method: "GET",
+        method: 'GET',
         headers: {
           Authorization: `Basic ${process.env.REACT_APP_TOKEN}`,
         },

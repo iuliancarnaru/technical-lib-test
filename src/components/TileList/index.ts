@@ -1,1 +1,1 @@
-export { default } from "./TileList";
+export { default } from './TileList';

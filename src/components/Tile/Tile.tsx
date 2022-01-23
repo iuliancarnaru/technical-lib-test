@@ -1,6 +1,6 @@
-import { forwardRef, useState } from "react";
-import { TileType } from "./Tile.types";
-import { displayTime } from "../../utils/displayTime";
+import React, { forwardRef, useState } from 'react';
+import { TileType } from './Tile.types';
+import { displayTime } from '../../utils/displayTime';
 import {
   About,
   ContactDetails,
@@ -14,8 +14,8 @@ import {
   TileDetails,
   TileImage,
   TileTime,
-} from "./Tile.style";
-import Modal from "../Modal";
+} from './Tile.style';
+import Modal from '../Modal';
 
 interface TileProps {
   tile: TileType;
@@ -36,7 +36,7 @@ const Tile = forwardRef<HTMLDivElement | null, TileProps>(({ tile }, ref) => {
 
   const fullName = `${firstName} ${lastName}`;
 
-  const handleModalVisibility = (): any => {
+  const handleModalVisibility = (): void => {
     setShowModal((prevState) => !prevState);
   };
 
@@ -70,7 +70,11 @@ const Tile = forwardRef<HTMLDivElement | null, TileProps>(({ tile }, ref) => {
           </ModalWrapper>
         </Modal>
       ) : null}
-      <TileContainer ref={ref} onClick={handleModalVisibility}>
+      <TileContainer
+        data-testid="tile-container"
+        ref={ref}
+        onClick={handleModalVisibility}
+      >
         {thumbnailUrl && (
           <TileImage
             imageUrl={thumbnailUrl}

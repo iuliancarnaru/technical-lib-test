@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+/* eslint max-len: ["error", { "code": 150 }] */
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -40,10 +41,14 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 /*
-    320px — 480px: Mobile devices.
-    481px — 768px: iPads, Tablets.
-    769px — 1024px: Small screens, laptops.
-    1025px — 1200px: Desktops, large screens.
-    1201px and more — Extra large screens, TV.
+    Spacing system: 2 | 4 | 8 | 12 | 16 | 24 | 32 | 48 | 64 | 80 | 96 | 128
+    Font size system: 10 | 12 | 14 | 16 | 18 | 20 | 24 | 30 | 36 | 44 | 52 | 62 | 74 | 86 | 98
+
+    Media query breakpoints:
+      320px — 480px: Mobile devices.
+      481px — 768px: iPads, Tablets.
+      769px — 1024px: Small screens, laptops.
+      1025px — 1200px: Desktops, large screens.
+      1201px and more — Extra large screens, TV.
 
 */

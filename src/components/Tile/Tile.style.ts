@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface TileProps {
   imageUrl: string;
@@ -27,7 +27,7 @@ export const TileImage = styled.span<TileProps>`
   background-repeat: no-repeat;
 
   @media only screen and (max-width: 480px) {
-    width:100%;
+    width: 100%;
   }
 `;
 
@@ -42,7 +42,7 @@ export const TileTime = styled.span`
   left: 8px;
   font-size: 18px;
   padding: 5px;
-  border-radius:5px;
+  border-radius: 5px;
   z-index: 2;
 `;
 
@@ -54,7 +54,7 @@ export const TileDetails = styled.div`
 
 export const ModalWrapper = styled.div`
   width: 1000px;
-  height:600px;
+  height: 600px;
   background-color: #fff;
   position: relative;
   display: flex;
@@ -65,7 +65,7 @@ export const ModalWrapper = styled.div`
     height: 80vh;
     overflow: scroll;
   }
-`
+`;
 
 export const ModalCloseButton = styled.button`
   position: absolute;
@@ -78,21 +78,19 @@ export const ModalCloseButton = styled.button`
   padding: 4px;
   background-color: #fff;
   border-radius: 50%;
-
-
-`
+`;
 export const ModalImage = styled.img`
   object-fit: cover;
   object-position: center;
   width: 400px;
-  height:100%;
+  height: 100%;
   background-color: #e2e2e2;
 
   @media only screen and (max-width: 1120px) {
     width: 100%;
     height: 200px;
   }
-`
+`;
 export const ModalContent = styled.div`
   display: flex;
   flex: 0 1 600px;
@@ -103,23 +101,23 @@ export const ModalContent = styled.div`
   @media only screen and (max-width: 468px) {
     padding: 24px;
   }
-`
+`;
 export const FullName = styled.h2`
   font-size: 24px;
   margin-bottom: 20px;
-`
+`;
 export const About = styled.p`
   font-size: 18px;
   line-height: 1.4;
-`
+`;
 
 export const ContactDetails = styled.p`
   font-size: 16px;
   color: #777;
-`
+`;
 
 export const EmailEmoji = styled.span`
   display: inline-block;
   font-size: 32px;
   margin-right: 10px;
-`
+`;

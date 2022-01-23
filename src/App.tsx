@@ -1,7 +1,8 @@
-import { Wrapper } from "./App.style";
-import Library from "./components/Library";
+import React, { ReactElement } from 'react';
+import { Wrapper } from './App.style';
+import Library from './components/Library';
 
-function App() {
+function App(): ReactElement {
   return (
     <Wrapper>
       <Library />
