@@ -39,6 +39,7 @@ describe('TileList component', () => {
       error: false,
       tiles: [
         {
+          id: '1sasa233',
           duration: 28.283098293468356,
           email: 'Hyman.DuBuque@Grady.co.uk',
           firstName: 'Dusty',

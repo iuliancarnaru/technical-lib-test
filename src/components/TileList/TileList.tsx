@@ -47,8 +47,7 @@ function TileList(): ReactElement {
         {tiles.map((tile, idx) => {
           return (
             <Tile
-              // eslint-disable-next-line react/no-array-index-key
-              key={`${tile.lastName}-${idx}`}
+              key={tile.id}
               ref={idx === tiles.length - 1 ? lastTileCard : null}
               tile={tile}
             />

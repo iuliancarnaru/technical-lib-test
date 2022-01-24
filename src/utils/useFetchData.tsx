@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { TileType } from '../components/Tile/Tile.types';
+import generateRandomStringId from './generateRandomStringId';
 
 const useFetchData = (
   pageNumber: number
@@ -31,7 +32,12 @@ const useFetchData = (
       .then((res) => {
         if (isMounted) {
           setTiles((prevData) => {
-            return [...prevData, ...res.data.rows];
+            const stringIdLength = 25;
+            const dataWithId = [...res.data.rows].map((item: TileType) => {
+              return { ...item, id: generateRandomStringId(stringIdLength) };
+            });
+
+            return [...prevData, ...dataWithId];
           });
           setHasMore(res.data.rows.length > 0);
           setLoading(false);

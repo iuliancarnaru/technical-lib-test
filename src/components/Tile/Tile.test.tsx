@@ -4,9 +4,9 @@ import { render, screen } from '@testing-library/react';
 import Tile from './Tile';
 
 const mockProps = {
-  id: '1',
   ref: null,
   tile: {
+    id: '1sasa233',
     duration: 28.283098293468356,
     email: 'Hyman.DuBuque@Grady.co.uk',
     firstName: 'Dusty',
