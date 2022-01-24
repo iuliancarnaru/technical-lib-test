@@ -11,6 +11,7 @@ export const TileContainer = styled.div`
 
   @media only screen and (max-width: 480px) {
     width: 90vw;
+    margin-right: 0;
   }
 `;
 
