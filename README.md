@@ -15,6 +15,6 @@
 
 ## Screenshots
 
-![Screenshot 1](https://github.com/iuliancarnaru/-technical-lib-test/blob/main/public/project-assets/2022-01-23%20210646.png "Loading")
-![Screenshot 2](https://github.com/iuliancarnaru/-technical-lib-test/blob/main/public/project-assets/2022-01-23%20210535.png "Success")
-![Screenshot 3](https://github.com/iuliancarnaru/-technical-lib-test/blob/main/public/project-assets/2022-01-23%20210415.png "Error")
+![Screenshot 1](https://github.com/iuliancarnaru/-technical-lib-test/blob/main/public/project-assets/2022-01-23%20210646.png 'Loading')
+![Screenshot 2](https://github.com/iuliancarnaru/-technical-lib-test/blob/main/public/project-assets/2022-01-23%20210535.png 'Success')
+![Screenshot 3](https://github.com/iuliancarnaru/-technical-lib-test/blob/main/public/project-assets/2022-01-23%20210415.png 'Error')

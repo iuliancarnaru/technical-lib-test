@@ -7,7 +7,7 @@ interface TileProps {
 export const TileContainer = styled.div`
   position: relative;
   margin-bottom: 24px;
-  /* margin-right: 16px; */
+  margin-right: 16px;
 
   @media only screen and (max-width: 480px) {
     width: 90vw;
