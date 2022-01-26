@@ -1,7 +1,7 @@
 import React, { createContext, ReactElement } from 'react';
 import { Wrapper } from './App.style';
 import Library from './components/Library';
-import useFetchFeatureFlags from './utils/useFetchFeatureFlags';
+import useGetCurrentFlags from './utils/useGetCurrentFlags';
 
 // create context
 export const FlagsContext = createContext({
@@ -9,7 +9,7 @@ export const FlagsContext = createContext({
 });
 
 function App(): ReactElement {
-  const flags = useFetchFeatureFlags();
+  const flags = useGetCurrentFlags();
 
   return (
     <FlagsContext.Provider value={flags}>

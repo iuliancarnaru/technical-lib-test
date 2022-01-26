@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as LDClient from 'launchdarkly-js-client-sdk';
 
-const useFetchFeatureFlags = (): { searchComponentEnabled: boolean } => {
+const useFetchCurrentFlags = (): { searchComponentEnabled: boolean } => {
   const [{ searchComponentEnabled }, setFeatureFlags] = useState({
     searchComponentEnabled: false,
   });
@@ -36,4 +36,4 @@ const useFetchFeatureFlags = (): { searchComponentEnabled: boolean } => {
   return { searchComponentEnabled };
 };
 
-export default useFetchFeatureFlags;
+export default useFetchCurrentFlags;
