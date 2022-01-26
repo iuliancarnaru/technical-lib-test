@@ -29,7 +29,7 @@ describe('TileList component', () => {
       hasMore: true,
     });
 
-    render(<TileList />);
+    render(<TileList searchTerm="" />);
     expect(screen.getByTestId('loading-progress')).toBeInTheDocument();
   });
 
@@ -54,7 +54,7 @@ describe('TileList component', () => {
       hasMore: true,
     });
 
-    render(<TileList />);
+    render(<TileList searchTerm="" />);
 
     expect(screen.getByText('Dusty Thompson')).toBeInTheDocument();
 
@@ -73,7 +73,7 @@ describe('TileList component', () => {
 
     render(
       <ErrorBoundary>
-        <TileList />
+        <TileList searchTerm="" />
       </ErrorBoundary>
     );
 

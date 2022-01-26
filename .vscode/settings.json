@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["browserslist", "Lato", "testid"],
+  "cSpell.words": ["browserslist", "Lato", "launchdarkly", "testid"],
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,

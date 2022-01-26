@@ -7,7 +7,7 @@ import { TileListContainer } from './TileList.style';
 import Tile from '../Tile';
 import useFetchData from '../../utils/useFetchData';
 
-function TileList(): ReactElement {
+function TileList({ searchTerm }: { searchTerm: string }): ReactElement {
   const [pageNumber, setPageNumber] = useState(1);
   const { loading, error, tiles, hasMore } = useFetchData(pageNumber);
 
@@ -27,6 +27,12 @@ function TileList(): ReactElement {
     [loading, hasMore]
   );
 
+  const filteredTiles = tiles.filter(
+    (tile) =>
+      tile.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      tile.lastName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       {loading && (
@@ -44,7 +50,7 @@ function TileList(): ReactElement {
         </Alert>
       )}
       <TileListContainer role="rowgroup">
-        {tiles.map((tile, idx) => {
+        {filteredTiles.map((tile, idx) => {
           return (
             <Tile
               key={tile.id}
