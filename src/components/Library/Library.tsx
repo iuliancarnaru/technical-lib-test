@@ -19,7 +19,7 @@ function Library(): ReactElement {
 
   return (
     <LibrarySection>
-      <HeaderContainer>
+      <HeaderContainer isSticky={searchComponentEnabled}>
         <LibraryHeader />
         {searchComponentEnabled && (
           <InputContainer>
@@ -27,7 +27,7 @@ function Library(): ReactElement {
               type="text"
               name="search"
               value={searchTerm}
-              placeholder="Search your favorite..."
+              placeholder="Search..."
               onChange={handleInputChange}
             />
           </InputContainer>

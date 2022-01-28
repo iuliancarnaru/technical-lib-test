@@ -1,7 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const TileListContainer = styled.div`
+interface TileListContainerProps {
+  isSticky: boolean;
+}
+
+export const TileListContainer = styled.div<TileListContainerProps>`
   display: flex;
   flex-wrap: wrap;
   margin: 0 24px;
+
+  ${({ isSticky }) =>
+    isSticky &&
+    css`
+      margin-top: 110px;
+    `}
 `;

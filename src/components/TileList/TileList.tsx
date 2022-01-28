@@ -1,4 +1,10 @@
-import React, { useState, useRef, useCallback, ReactElement } from 'react';
+import React, {
+  useState,
+  useRef,
+  useCallback,
+  ReactElement,
+  useContext,
+} from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
@@ -6,8 +12,10 @@ import AlertTitle from '@mui/material/AlertTitle';
 import { TileListContainer } from './TileList.style';
 import Tile from '../Tile';
 import useFetchData from '../../utils/useFetchData';
+import { FlagsContext } from '../../App';
 
 function TileList({ searchTerm }: { searchTerm: string }): ReactElement {
+  const { searchComponentEnabled } = useContext(FlagsContext);
   const [pageNumber, setPageNumber] = useState(1);
   const { loading, error, tiles, hasMore } = useFetchData(pageNumber);
 
@@ -49,7 +57,7 @@ function TileList({ searchTerm }: { searchTerm: string }): ReactElement {
           😟 Ups something went wrong! <strong>Please try again 🔁</strong>
         </Alert>
       )}
-      <TileListContainer role="rowgroup">
+      <TileListContainer role="rowgroup" isSticky={searchComponentEnabled}>
         {filteredTiles.map((tile, idx) => {
           return (
             <Tile
